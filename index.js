@@ -6,7 +6,9 @@ app.get('/', (req, res) =>{
 }) 
 
 const itemsRouter = require('./routes/items.js')
+const reservationsRouter = require('./routes/reservations.js')
 app.use('/items', itemsRouter)
+app.use('/reservations', reservationsRouter)
 
 app.listen(8181, () => {
     console.log('Running')    
