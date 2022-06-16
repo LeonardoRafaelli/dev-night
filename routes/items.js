@@ -29,7 +29,7 @@ router.post('/', async(req, res) => {
     }
 })
 
-//make router.put that receives an itemId and updates the item
+
 router.patch('/:itemId', async(req, res) => {
     const itemId = req.params.itemId
     const item = await items.find(item => item.itemId == itemId)
@@ -48,5 +48,19 @@ router.patch('/:itemId', async(req, res) => {
     }
 })
 
+router.delete('/:itemId', async(req, res) => {
+    const itemId = req.params.itemId
+    const item = await items.find(item => item.itemId == itemId)
+    if(!item){
+        res.status(404).json({error: 'Item not found'})
+    }
+    try{
+        items.splice(items.indexOf(item), 1)
+        res.status(202).json(item)
+    }
+    catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
 
 module.exports = router
