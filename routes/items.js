@@ -29,7 +29,6 @@ router.post('/', async(req, res) => {
     }
 })
 
-
 router.patch('/:itemId', async(req, res) => {
     const itemId = req.params.itemId
     const item = await items.find(item => item.itemId == itemId)
