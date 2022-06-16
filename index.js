@@ -5,8 +5,12 @@ app.get('/', (req, res) =>{
     res.send('sadnuasbud')
 }) 
 
-const itemsRouter = require('./routes/items.js')
-const reservationsRouter = require('./routes/reservations.js')
+const itemsRouter = require('./routes/items.js');
+const reservationsRouter = require('./routes/reservations.js');
+const teachersRouter = require('./routes/teachers.js');
+const ordersRouter = require('./routes/orders.js');
+
+app.use('/teachers', teachersRouter);
 app.use('/items', itemsRouter)
 app.use('/reservations', reservationsRouter)
 
