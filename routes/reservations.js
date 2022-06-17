@@ -70,24 +70,6 @@ router.patch('/:reservationId', async(req, res) => {
     }
 })
 
-// router.patch('/:itemId', async(req, res) => {
-//     const itemId = req.params.itemId
-//     const item = await items.find(item => item.itemId == itemId)
-//     if(!item){
-//         res.status(404).json({error: 'Item not found'})
-//     }
-//     try{
-//         item.name = req.body.name
-//         item.stockQuantity = req.body.stockQuantity?? item.stockQuantity
-//         item.description = req.body.description?? item.description
-//         item.image = req.body.image?? item.image
-//         res.status(202).json(item)
-//     }
-//     catch(err){
-//         res.status(500).json({error: err.message})
-//     }
-// })
-
 router.delete('/:reservationId', (req, res) => {
     reservationList.splice(takeIdReservation(req), 1);
     res.json(reservation);
