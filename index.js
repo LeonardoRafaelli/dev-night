@@ -15,6 +15,7 @@ app.use('/teachers', teachersRouter);
 app.use('/items', itemsRouter)
 app.use('/reservations', reservationsRouter)
 app.use('/storage', storageRouter)
+app.use('/orders', ordersRouter);
 
 app.listen(8181, () => {
     console.log('Running')    
