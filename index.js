@@ -13,6 +13,7 @@ const ordersRouter = require('./routes/orders.js');
 app.use('/teachers', teachersRouter);
 app.use('/items', itemsRouter)
 app.use('/reservations', reservationsRouter)
+app.use('/orders', ordersRouter);
 
 app.listen(8181, () => {
     console.log('Running')    
