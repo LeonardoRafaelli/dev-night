@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-router.use(expressjson());
+router.use(express.json());
 
 
 const teachers = [
